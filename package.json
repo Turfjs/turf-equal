@@ -1,0 +1,31 @@
+{
+  "name": "turf-equal",
+  "version": "1.0.0",
+  "description": "determine whether two geojson objects are equal",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js",
+    "doc": "dox -r < index.js | doxme --readme > README.md"
+  },
+  "keywords": [
+    "turf",
+    "turfjs",
+    "equal",
+    "geojson"
+  ],
+  "author": "Tom MacWright",
+  "license": "ISC",
+  "dependencies": {
+    "deep-equal": "^0.2.1",
+    "geojson-rewind": "^0.1.0"
+  },
+  "devDependencies": {
+    "dox": "^0.6.1",
+    "doxme": "^1.4.2",
+    "tape": "^3.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Turfjs/turf-equal.git"
+  }
+}
