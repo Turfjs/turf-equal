@@ -1,56 +1,17 @@
-var equals = require('./');
-var otherequals = new(require('geojson-equality'));
+var equal = require('./');
 var Benchmark = require('benchmark');
 var fs = require('fs');
 
-
-var p1 = {
-  "type": "Feature",
-  "properties": {},
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-      [
-        [38,-33],
-        [38,-31],
-        [42,-31],
-        [42,-33],
-        [38,-33]
-      ]
-    ]
-  }
-};
-
-var p2 = {
-  "type": "Feature",
-  "properties": {},
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-      [
-        [38,-31],
-        [42,-31],
-        [42,-33],
-        [38,-33],
-        [38,-31]
-      ]
-    ]
-  }
-};
-
-
+var points = JSON.parse(fs.readFileSync(__dirname+'/test/fixtures/in/points.json'));
+var polys = JSON.parse(fs.readFileSync(__dirname+'/test/fixtures/in/polygons.json'));
 
 var suite = new Benchmark.Suite('turf-simplify');
 suite
-  .add('turf-equals',function () {
-    equals(p1, p2);
+  .add('turf-equal#Points',function () {
+    equal(points[0], points[2]);
   })
-  .add('geojson-equality',function () {
-    otherequals.compare(p1, p2);
-  })
-  .add('geojson-equality#dup-objectequality', function () {
-    if (p1 == p2) return true;
-    otherequals.compare(p1, p2);
+  .add('turf-equal#Polygon',function () {
+    equal(polys[0], polys[2]);
   })
   .on('cycle', function (event) {
     console.log(String(event.target));
