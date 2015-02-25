@@ -1,5 +1,5 @@
-var deepEqual = require('deep-equal'),
-    rewind = require('geojson-rewind');
+var equality = new (require('geojson-equality'));
+
 /**
  * Determine whether two GeoJSON objects are equal to each other.
  * This is a combination of simple `===` equality in JavaScript, deepEqual,
@@ -13,24 +13,13 @@ var deepEqual = require('deep-equal'),
  * @example
  * // turf.equal(turf.point([0,0]), turf.point([1,1]))
  */
-module.exports = equal;
+module.exports = function(a, b) {
+    var aGeom, bGeom;
 
-function equal(a, b) {
-    // Comparisons below are in order of strictness and performance
-    // aspect.
+    if (a == b) return true;
 
-    // the same instance
-    if (a === b) return true;
+    aGeom = a.geometry ? a.geometry : a;
+    bGeom = b.geometry ? b.geometry : b;
 
-    // the same deep equal'ed
-    if (deepEqual(a, b, { strict: true })) return true;
-
-    a = rewind(JSON.parse(JSON.stringify(a)));
-    b = rewind(JSON.parse(JSON.stringify(b)));
-
-    // objects are the same but winding
-    // order was different.
-    if (deepEqual(a, b, { strict: true })) return true;
-
-    return false;
+    return equality.compare(aGeom, bGeom);
 }

@@ -29,5 +29,11 @@ test('turf-equal', function(t) {
     };
     t.equal(true, equal(poly, poly2), 'polygon rewound case');
 
+    var poly3 = {
+        type: 'Polygon',
+        coordinates: [[[1, 1], [1, 0], [0, 0], [1, 1]]]
+    };
+    t.equal(true, equal(poly, poly3), 'polygon different starting point');
+
     t.end();
 });

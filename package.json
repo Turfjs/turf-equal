@@ -16,10 +16,10 @@
   "author": "Tom MacWright",
   "license": "ISC",
   "dependencies": {
-    "deep-equal": "^0.2.1",
-    "geojson-rewind": "^0.1.0"
+    "geojson-equality": "^0.1.0"
   },
   "devDependencies": {
+    "benchmark": "^1.0.0",
     "dox": "^0.6.1",
     "doxme": "^1.4.2",
     "tape": "^3.4.0"
