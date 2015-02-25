@@ -4,7 +4,7 @@
   "description": "determine whether two geojson objects are equal",
   "main": "index.js",
   "scripts": {
-    "test": "tape test.js",
+    "test": "tape test/test.js",
     "doc": "dox -r < index.js | doxme --readme > README.md"
   },
   "keywords": [
@@ -20,6 +20,7 @@
     "geojson-rewind": "^0.1.0"
   },
   "devDependencies": {
+    "benchmark": "^1.0.0",
     "dox": "^0.6.1",
     "doxme": "^1.4.2",
     "tape": "^3.4.0"
