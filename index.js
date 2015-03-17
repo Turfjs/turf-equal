@@ -18,8 +18,5 @@ module.exports = function(a, b) {
 
     if (a == b) return true;
 
-    aGeom = a.geometry ? a.geometry : a;
-    bGeom = b.geometry ? b.geometry : b;
-
-    return equality.compare(aGeom, bGeom);
+    return equality.compare(a, b);
 }
