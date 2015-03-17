@@ -16,7 +16,7 @@
   "author": "Tom MacWright",
   "license": "ISC",
   "dependencies": {
-    "geojson-equality": "^0.1.0"
+    "geojson-equality": "^0.1.4"
   },
   "devDependencies": {
     "benchmark": "^1.0.0",
