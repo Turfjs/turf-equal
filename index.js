@@ -14,8 +14,6 @@ var equality = new (require('geojson-equality'));
  * // turf.equal(turf.point([0,0]), turf.point([1,1]))
  */
 module.exports = function(a, b) {
-    var aGeom, bGeom;
-
     if (a == b) return true;
 
     return equality.compare(a, b);
