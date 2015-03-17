@@ -18,6 +18,7 @@ test('equal -- polygons', function (t) {
     t.ok(equal(polys[0], polys[1]), 'deep equal')
     t.notOk(equal(polys[0], polys[2]), 'not equal')
     t.ok(equal(polys[0], polys[3]), 'polygon winding')
+    t.ok(equal(polys[0], polys[4]), 'different starting point')
 
     t.end();
 });
