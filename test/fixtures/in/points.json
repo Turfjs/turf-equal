@@ -1,0 +1,14 @@
+[
+    {
+        "type": "Point",
+        "coordinates": [0, 0]
+    },
+    {
+        "type": "Point",
+        "coordinates": [0, 0]
+    },
+    {
+        "type": "Point",
+        "coordinates": [10, 0]
+    }
+]
