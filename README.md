@@ -1,3 +1,4 @@
+# DEPRECATED - replaced with [`@turf/boolean-equal`](https://github.com/Turfjs/turf/tree/master/packages/turf-boolean-equal)
 # turf-equal
 
 [![build status](https://secure.travis-ci.org/Turfjs/turf-equal.png)](http://travis-ci.org/Turfjs/turf-equal)
